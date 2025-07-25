@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import os
 
-# Load model and vectorizer from local folder
+# Paths to model and vectorizer
 MODEL_PATH = "models/model.pkl"
 VECTORIZER_PATH = "models/vectorizer.pkl"
 
@@ -22,7 +22,19 @@ def load_model():
 model, vectorizer = load_model()
 
 # UI
-st.title("Fake News Detector")
+st.title("📰 Fake News Detector")
+
+st.markdown(
+    """
+    <div style='color: gray; font-size: 15px; padding-bottom: 15px;'>
+        ⚠️ <strong>Disclaimer:</strong> This model was trained using data from over 3 years ago. 
+        While it still performs well, the model will be updated soon to reflect recent patterns in fake news. 
+        <br>
+        Results may vary depending on the nature and context of the input.
+    </div>
+    """, unsafe_allow_html=True
+)
+
 st.write("Enter a news article or message below to detect whether it's fake or real.")
 
 input_text = st.text_area("✍️ Paste the message or news content here:", height=200)
