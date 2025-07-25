@@ -6,7 +6,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 import os
 
-df = pd.read_csv("../data/fake_or_real_news.csv")
+base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_path = os.path.join(base_path, "data", "fake_or_real_news.csv")
+df = pd.read_csv(data_path)
+
 
 X = df['text']
 y = df['label']
@@ -23,6 +26,8 @@ model.fit(X_train_tfidf, y_train)
 y_pred = model.predict(X_test_tfidf)
 print(classification_report(y_test, y_pred))
 
-os.makedirs("models", exist_ok=True)
-joblib.dump(model, "models/model.pkl")
-joblib.dump(vectorizer, "models/vectorizer.pkl")
+import os
+os.makedirs("../models", exist_ok=True)
+
+joblib.dump(model, "../models/model.pkl")
+joblib.dump(vectorizer, "../models/vectorizer.pkl")
