@@ -1,1 +1,8 @@
- README.md
+pandas
+numpy
+scikit-learn
+streamlit
+matplotlib
+seaborn
+nltk
+joblib
