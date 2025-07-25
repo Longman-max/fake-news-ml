@@ -2,9 +2,9 @@ import streamlit as st
 import joblib
 import os
 
-# Load model and vectorizer
-MODEL_PATH = "../models/model.pkl"
-VECTORIZER_PATH = "../models/vectorizer.pkl"
+# Load model and vectorizer from local folder
+MODEL_PATH = "models/model.pkl"
+VECTORIZER_PATH = "models/vectorizer.pkl"
 
 @st.cache_resource
 def load_model():
