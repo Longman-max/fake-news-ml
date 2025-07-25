@@ -18,10 +18,6 @@ venv/
 *.tsv
 *.xlsx
 
-# Model and vectorizer files
-/models/
-*.pkl
-*.joblib
 
 # Streamlit temp
 .streamlit/
